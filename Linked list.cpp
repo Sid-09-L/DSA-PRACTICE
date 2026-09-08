@@ -79,3 +79,23 @@ void insertpos(Node* &head,int value,int pos){
     newnode->next=temp->next;
     temp->next=newnode;
 }
+void popfront(Node* &head){
+    if(head==NULL){
+        return;
+    }
+    Node*temp=head;
+    head=head->next;
+
+    delete temp;
+}
+void popback(Node* &head){
+    if(head==NULL){
+        return;
+    }
+    if(head->next==NULL){
+        delete head;
+        head=NULL;
+    }
+    Node*temp=head;
+    while(temp->next)
+}
