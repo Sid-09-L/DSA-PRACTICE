@@ -36,21 +36,32 @@ class ageexception{
     }
 };
 
-int main(){
-    int age;
-    cout<<"Enter age:";
-    cin>>age;
+int main()
+{
+    int choice;
 
-    try {
-        if(age<18){
-            throw ageexception();
+    cout << "Enter 1 or 2: ";
+    cin >> choice;
+
+    try
+    {
+        if(choice == 1)
+        {
+            throw 10;
         }
-        cout<<"Eligible";
-    }
-    catch(ageexception e){
-        e.message();
-    }
-    return 0;
+        else if(choice == 2)
+        {
+            throw 'A';
+        }
 
+        cout << "No exception";
+    }
+
+    catch(...)
+    {
+        cout << "Some exception occurred";
+    }
+
+    return 0;
 }
 
