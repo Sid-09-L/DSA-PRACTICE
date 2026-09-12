@@ -1,58 +1,56 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 void merge(int arr[],int st,int mid,int end){
-    int temp[1000];
+   vector<int> temp;
     int i=st;
     int j=mid+1;
-    int k=st;
 
     while(i<=mid && j<=end){
-        if(arr[i]<arr[j]){
-            temp[k]=arr[i];
-            i++;
+        if( arr[i]<=arr[j]){
+            temp.push_back(arr[i++]);
         }
         else{
-            temp[k]=arr[j];
-            j++;
+            temp.push_back(arr[j++]);
         }
-        k++;
     }
     while(i<=mid){
-        temp[k]=arr[i];
-        i++;
-        k++;
+        temp.push_back(arr[i++]);
+
     }
     while(j<=end){
-        temp[k]=arr[j];
-        j++;
-        k++;
+        temp.push_back(arr[j++]);
+
     }
-    for(int idx=st;idx<=end;idx++){
-        arr[idx]=temp[idx];
+    for(int idx=st,x=0;idx<=end;idx++){
+        arr[idx]=temp[x++];
+
     }
+
 }
 
-void mergesort(int arr[],int st,int end){
-    if(st<end){
-        int mid=st+(end-st)/2;
-
-        mergesort(arr,st,mid);//LEFT HALF
-        mergesort(arr,mid+1,end);//RIGHT HALF
-
-        merge(arr,st,mid,end);
-
+void mergesort(int arr[],int st, int end){
+    if(st>=end){
+        return;
     }
+
+    int mid=st+(end-st)/2;
+
+    mergesort(arr,st,mid);//left half
+    mergesort(arr,mid+1,end); //Right half
+
+    merge(arr,st,mid,end);//Conquer
+
 }
 int main(){
-    int arr[5]={8,3,7,1,5};
-    int n=5;
-    int size=sizeof(arr)/sizeof(arr[0]);
+    int arr[6]={6,3,7,5,2,4};
+    int n=6;
+    
 
-    mergesort(arr,0,size-1);
+    mergesort(arr,0,n-1);
 
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }  
-    cout<<endl;
-} 
+    for(int x:arr){
+        cout<<x<<" ";
+    }
+}
