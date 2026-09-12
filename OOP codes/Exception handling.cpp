@@ -29,34 +29,28 @@ class calculator{
 //     return 0;
 // }
 
-// 
-
-class error{
+class ageexception{
     public:
     void message(){
-        cout<<"General error";
-
+        cout<<"Age is less than 18";
     }
 };
-class divide:public error{
-    public:
-    void display(){
-        cout<<"Cannot divide by zero";
 
-    }
-};
 int main(){
-    int a=10;
-    int b=5;
+    int age;
+    cout<<"Enter age:";
+    cin>>age;
 
-    try{
-        if(b==0){
-            throw divide();
+    try {
+        if(age<18){
+            throw ageexception();
         }
-        cout<<a/b;
+        cout<<"Eligible";
     }
-    catch(divide e){
-        e.display();
+    catch(ageexception e){
+        e.message();
     }
     return 0;
+
 }
+
