@@ -25,7 +25,7 @@ void nextGreaterElement(const vector<int>& arr, vector<int>& ans){
     }
     s.push(curr);
 }
-for(size_t i=0;i<ans.size();i++){
+for( int i=0;i<ans.size();i++){
     cout<<ans[i]<<" ";
 }
 cout<<endl;
