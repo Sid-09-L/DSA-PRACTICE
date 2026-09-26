@@ -14,6 +14,7 @@ class patient{
             name=n;
             age=a;
             nod=day;
+            count++;
         }
         inline float roomcharge(){
             return 1000*nod;
@@ -23,7 +24,7 @@ class patient{
 
         }
         static void showCount(){
-            cout<<"Total number patients"<<count<<endl;
+            cout<<"Total number patients="<<count<<endl;
         }
         friend void display(patient p);
 };
@@ -47,6 +48,9 @@ int main(){
         display(patients[i]);
         cout<<endl;
     }
+
+    patient::showCount();
+
     int highest=patients[0].hospitalbill();
     int index=0;
 
