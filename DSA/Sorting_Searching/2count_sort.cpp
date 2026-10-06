@@ -45,3 +45,9 @@ int main(){
 
     return 0;
 }
+
+
+//DrawBack of countsort:
+// 1.) when K is so much greater than number of elements in array
+// 2.)Don't works for floating and negative values
+
