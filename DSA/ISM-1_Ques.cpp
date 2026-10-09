@@ -2,17 +2,35 @@
 using namespace std;
 
 int main(){
-    int i,orignal,rev=0;
-cout<<"Enter palindrome number You want to check=";
-cin>>i;
-int orignal=i;
+    int n,key;
+    int comaprisons=0;
+    int found=0;
 
-while(i>0){
-    rev=(rev*10)+i%10;
-    i=i%10;
-}
-if()
+    cout<<"Enter number of employees:";
+    cin>>n;
 
+    int arr[n];
 
+    cout<<"Enter employee IDs:";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter Employees ID to be searched:";
+    cin>>key;
 
+    for(int i=0;i<n;i++){
+        comaprisons++;
+        if(arr[i]==key){
+            cout<<"Employee found at postion:";
+            found=1;
+            cout<<i+1;
+            break;
+        }
+    }
+    if(found==0){
+        cout<<"Employee ID not found";
+    }
+    cout<<"\n Number of comparisons:"<<comaprisons<<endl;
+
+    return 0;
 }
