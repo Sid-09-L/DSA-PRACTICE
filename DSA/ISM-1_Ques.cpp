@@ -24,7 +24,6 @@ int main(){
             cout<<"Employee found at postion:";
             found=1;
             cout<<i+1;
-            break;
         }
     }
     if(found==0){
