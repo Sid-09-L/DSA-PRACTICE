@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int partition(int arr[],int st,int end){
+int partition(int arr[],int st,int end){   
     int pivot=arr[st];
 
     while(st<end){
