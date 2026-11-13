@@ -4,14 +4,17 @@
 using namespace std;
 
 int main(){
-    string st1="Show me";
-    string st2;
+    
+   ifstream fin("student.txt");
 
-    ofstream write("LOL.txt");
-    write<<st1;
+   fin.seekg(2);
 
-    ifstream read("LOL.txt");
-    getline(read,st2);
+    char ch;
+    fin.get(ch);
 
-    cout<<st2;
+    cout<<ch;
+
+    fin.close();
+
+    return 0;
 }
